@@ -12,7 +12,8 @@ RUN if [ "${BUILD_ENV}" = "local" ]; then sed -i s/deb.debian.org/mirrors.cqu.ed
 ARG EC_URL
 
 RUN cd tmp &&\
-    busybox wget "${EC_URL}" -O EasyConnect.deb &&\
+    busybox wget "http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_767/EasyConnect_x64_7_6_7_3.deb
+" -O EasyConnect.deb &&\
     dpkg -i EasyConnect.deb && rm EasyConnect.deb
 
 COPY ./docker-root /
